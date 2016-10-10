@@ -1,0 +1,84 @@
+// Navigation styles
+
+nav {
+	padding:30px 40px;
+	padding-bottom: 0;
+	position: relative;
+	&::after {
+		content:"";
+		position: absolute;
+		bottom: -20px;
+		height: 100px;
+		left:-40px;
+		width: 110%;
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+	}
+	a {
+		padding:10px 15px;
+		position: relative;
+		z-index: 50;
+		transition:all 0.3s ease;
+	}
+	.mainNav li:hover a {
+		color: $red;
+	}
+	.fa-bars,.fa-times {
+		display: none;
+		color: white;
+	}
+}
+
+.search	{
+	transform:scale(-1,1);
+	color: white;
+	font-size:15px;
+}
+
+// Header styles
+
+header {
+	background-image: linear-gradient(rgba(35,37,41,0.7),rgba(35,37,41,0.7)),url("assets/hero_sm.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	position: relative;
+	.sectionTitle {
+		position: absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+	}
+	h2 {
+		color: $red;
+		font-size: 3rem;
+	}
+	button.btn {
+		position: absolute;
+		bottom:-60px;
+	}
+}
+
+// flickity overrides
+
+header {
+	.flickity-slider {
+		height: 100%;
+	}
+
+	.carousel-cell {
+		width: 100% !important;
+		height: 100% !important;
+	}
+
+	.flickity-viewport {
+		height: 90vh!important;
+	}
+
+	.carousel-cell.is-selected{
+		height: 90% !important;
+	}
+
+	.is-draggable {
+		height: 80% !important;
+	}
+}

@@ -1,0 +1,212 @@
+
+// Breakpoints
+
+@media all and (max-width:1000px) {
+	.works figcaption {
+		padding:3%;
+	}
+}
+
+@media all and (max-width:900px) {
+	.team .gallery {
+		flex-wrap:wrap;
+	}
+	.team .gallery .galleryItem {
+		flex:1 0 50%;
+	}
+}
+
+@media all and (max-width: 825px) {
+	header {
+		background-position: 20%;
+	}
+
+	.show-menu {
+		display: block!important;
+	}
+
+	nav .fa-bars, nav .fa-times, nav .search {
+		display: block;
+		position: relative;
+		z-index:100;
+		transition:all 0.3s ease;
+	}
+
+	header {
+		h1 {
+			font-size:3rem;
+			line-height: 3rem;
+		}
+	}
+
+	header ul.mainNav  {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 50%;
+		background: $black;
+		display: none;
+		flex-flow: column wrap;
+		text-align: center;
+		justify-content: space-around;
+		z-index:100;
+	}
+
+	header ul.mainNav li {
+		padding: 3% 0;
+		flex-basis:auto;
+		font-size: 2rem;
+		border:2px solid $red;
+		&:hover {
+			background:rgba(255,255,255,0.1);
+		}
+	}
+
+	header ul.mainNav a {
+		color: white;
+		padding-left:40px;
+		padding-right:40px;
+	}
+
+	header nav .fa-search {
+		display: none;
+	}
+
+	// our works section styles, with some come team skills start for 825 px
+	.whoWeAre .flexParent {
+		flex-wrap:wrap;
+	}
+
+	.whoWeAreItem{
+		flex:1 0 50%;
+		padding:10px;
+	}
+
+	.works .galleryItem, .team figure {
+		flex:0 0 50%;
+	}
+
+	.team figure figcaption {
+		h3 {
+			font-size:2rem;
+		}
+	}
+
+	.works figcaption{
+		padding:15%;
+	}
+
+	.skills {
+		align-items:baseline;
+		flex-wrap:wrap;
+		align-content:center;
+		.skillItem {
+			flex: 0 0 45%;
+			padding:0;
+		}
+		p {
+			display: none;
+		}
+	}
+
+	footer .wrapper {
+		flex-wrap:wrap;
+		width:80%;
+		.footerItem {
+		flex:0 0 46%;
+		margin-top: 40px;
+		}
+		.logo {
+			padding-bottom:5px;
+		}
+		.footerItem1{
+			order:4;
+		}
+	}
+
+} //media end
+
+@media all and (max-width: 620px) {
+	header {
+		background-position: 40%;
+	}
+
+	header ul.mainNav  {
+		width: 100%;
+	}
+
+	.whoWeAre .flexParent{
+		flex-direction:column;
+	}
+
+	.workFilter {
+		width:90%;
+	}
+
+	.works .galleryItem figcaption{
+		bottom:20px;
+	}
+
+	.works ul.workFilter li a {
+		font-size:12px;
+		padding: 5px 0;
+	}
+
+	.team figure figcaption, .works figure figcaption {
+		opacity: 1;
+		position: relative;
+		height: 40%;
+		left:0;
+		right:0;
+		top:0;
+		background-color: $red;
+	}
+
+	.works figure {
+		border:5px solid $black;
+	}
+	
+	.team .galleryItem {
+		border:5px solid $black;
+	}
+
+	.team .galleryItem .figContent {
+		margin-top:0;
+		position: static;
+		padding: 5px;
+	}
+	
+	section.contact .flexParent {
+		display: block;
+		input[type="submit"] {
+			margin: 20px auto 0;
+		}
+	}
+	
+	.contact div.sectionTitle {
+		margin-bottom:0;
+	}
+
+} 
+// Media end
+
+@media all and (max-width: 485px) {
+	header {
+		background-position: 92%;
+	}
+
+	.wrapper {
+		width:90%;
+	}
+
+	div.skills.flexParent{
+		display: block;
+	    margin: 0 auto;
+ 	    width: 40%;
+ 	    padding-top: 15px;
+	}
+
+	.team .socialBar {
+		display: none;
+	}
+}
