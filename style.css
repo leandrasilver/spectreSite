@@ -262,6 +262,10 @@ button.btn h3 {
   font-size: 1rem;
 }
 
+button.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 .flexParent {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -402,14 +406,71 @@ ol.flickity-page-dots li.dot.is-selected::after {
   height: 40px;
   width: 40px;
   background-color: transparent;
+  transition: 0.3s all ease;
 }
 
 .flickity-prev-next-button.next:hover, .flickity-prev-next-button.previous:hover {
-  background-color: transparent;
+  background-color: white;
+  cursor: pointer;
+}
+
+.flickity-prev-next-button.next:hover svg path, .flickity-prev-next-button.previous:hover svg path {
+  fill: #d62b41;
 }
 
 .flickity-prev-next-button.next svg path, .flickity-prev-next-button.previous svg path {
   fill: white;
+  transition: 0.3s all ease;
+}
+
+.dots {
+  position: absolute;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  left: 50%;
+  width: 60px;
+  bottom: -4px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.dots .dot {
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.dots .dot1 {
+  background-color: #d20a1e;
+}
+
+.dots .dot1::after {
+  content: "";
+  background: #d62b41;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  border-radius: 50%;
+  -webkit-animation: pulse 3s ease-out;
+          animation: pulse 3s ease-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.jsAnimate {
+  -webkit-animation: 1.2s pulse infinite;
+          animation: 1.2s pulse infinite;
 }
 
 @-webkit-keyframes "pulse" {
@@ -557,21 +618,22 @@ header .is-draggable {
 }
 
 .whoWeAreItem p {
+  margin-bottom: 30px;
   font-size: 1.2rem;
 }
 
-.whoWeAreItem::after {
-  content: "";
-  background-color: #d62b41;
-  border-radius: 50%;
-  height: 10px;
+.whoWeAreItem .dots {
   width: 10px;
-  position: absolute;
-  left: 50%;
-  bottom: -25px;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+}
+
+.whoWeAreItem .dots .dot1::after {
+  -webkit-animation: none;
+          animation: none;
+}
+
+.whoWeAreItem:hover .dot1::after {
+  -webkit-animation: 1s pulse infinite;
+          animation: 1s pulse infinite;
 }
 
 .works {
@@ -677,6 +739,13 @@ ul.workFilter li a:hover, a:focus {
   padding: 13px 15px;
   border-radius: 50%;
   border: 1px solid black;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+
+.works figcaption .fa:hover {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .works .flickity-prev-next-button.next, .works .flickity-prev-next-button.previous {
@@ -706,51 +775,6 @@ ul.workFilter li a:hover, a:focus {
   color: white;
   text-transform: capitalize;
   font-size: 12px;
-}
-
-.workQuotes .dots {
-  position: absolute;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  left: 50%;
-  width: 60px;
-  bottom: -4px;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.workQuotes .dots .dot {
-  height: 10px;
-  width: 10px;
-  background-color: white;
-  border-radius: 50%;
-}
-
-.workQuotes .dots .dot1 {
-  background-color: #d20a1e;
-}
-
-.workQuotes .dots .dot1::after {
-  content: "";
-  background: #d62b41;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  border-radius: 50%;
-  -webkit-animation: pulse 3s ease-out;
-          animation: pulse 3s ease-out;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
 }
 
 .skills {
@@ -899,9 +923,12 @@ input[type="email"], input[type="text"] {
   border: none;
   border-bottom: 1px solid rgba(89, 93, 102, 0.1);
   padding: 10px;
+  border: 3px solid white;
+  border-bottom: 3px solid lightgrey;
+  transition: 0.3s all ease;
 }
 
-input[type="email"]:focus, input[type="text"]:focus {
+input[type="email"]:focus, input[type="email"]:hover, input[type="text"]:focus, input[type="text"]:hover {
   border: 3px solid #d62b41;
   outline: none;
 }
@@ -914,9 +941,13 @@ textarea {
   padding: 10px;
   font-size: 1.3rem;
   margin-top: 10px;
+  resize: none;
+  border: 3px solid white;
+  border-bottom: 3px solid lightgrey;
+  transition: 0.3s all ease;
 }
 
-textarea:focus {
+textarea:focus, textarea:hover {
   border: 3px solid #d62b41;
   outline: none;
 }
@@ -930,6 +961,12 @@ input[type="submit"] {
   font-weight: bold;
   display: block;
   margin-top: 8%;
+  transition: 0.3s all ease;
+}
+
+input[type="submit"]:hover, input[type="submit"]:focus {
+  border: 3px solid black;
+  color: #d62b41;
 }
 
 aside {
@@ -960,6 +997,15 @@ aside button.aside {
   background-color: #d62b41;
   border: none;
   padding: 10px 30px;
+  transition: 0.3s all ease;
+}
+
+aside button.aside:hover, aside button.aside:focus {
+  background-color: white;
+}
+
+aside button.aside:hover a, aside button.aside:focus a {
+  color: #d62b41;
 }
 
 footer {
@@ -1004,6 +1050,12 @@ footer h4 {
   font-size: 1.3rem;
   font-weight: 500;
   text-transform: capitalize;
+  transition: 0.3s all ease;
+}
+
+footer h4:hover {
+  color: #d62b41;
+  cursor: pointer;
 }
 
 footer .socialBar {
@@ -1022,16 +1074,21 @@ footer .socialBar {
 
 footer i {
   color: white;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+
+footer i:hover, footer i:focus {
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
+  color: #d62b41;
 }
 
 .footerItem {
   -webkit-flex: 0 1 20%;
       -ms-flex: 0 1 20%;
           flex: 0 1 20%;
-}
-
-.footerItem3 h4:hover {
-  color: #d62b41;
 }
 
 .footerItem4 h4 {

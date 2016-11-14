@@ -83,6 +83,9 @@ button.btn {
 		font-weight:500;
 		font-size:1rem;
 	}
+	&:hover {
+		background-color: rgba(255,255,255,0.2);
+	}
 }
 
 .flexParent {
@@ -205,7 +208,6 @@ ol.flickity-page-dots {
 			animation: pulse 3s ease-out;
 			animation-iteration-count: infinite;
 		}
-		
 	}	  
 }
 
@@ -214,18 +216,63 @@ ol.flickity-page-dots {
 	height: 40px;
 	width: 40px; 
 	background-color: transparent;
+	transition:0.3s all ease;
 	&:hover {
-		background-color: transparent;
+		background-color:white;
+		cursor:pointer;
+		svg path {
+			fill:$red;
+		}
 	}
 	svg {
 		path {
 			fill:rgba(255,255,255,1);
+			transition:0.3s all ease;
 		}
 	}
 }
 
 
 // animations
+
+
+.dots {
+	position: absolute;
+	display: flex;
+	justify-content:space-between;
+	left:50%;
+	width: 60px;
+	bottom: -4px;
+	transform:translateX(-50%);
+	.dot {
+		height: 10px;
+		width:10px;
+		background-color: white;
+		border-radius: 50%;
+	}
+	.dot1 {
+		background-color: rgba(210,10,30,1);;
+		&::after {
+			content:"";
+			background: $red;
+			width: 10px;
+			height:10px;
+			position: absolute;
+			top:0;
+			left: 0;
+			right: 0;
+			bottom:0;
+			z-index: 10;
+			border-radius: 50%;
+			animation: pulse 3s ease-out;
+			animation-iteration-count: infinite;
+		}
+	}
+}
+
+.jsAnimate {
+	animation:1.2s pulse infinite;
+}
 
 @-moz-keyframes pulse {
  0% {

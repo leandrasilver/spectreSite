@@ -29,18 +29,19 @@
 		font-family: Bebas;
 	}
 	p {
+		margin-bottom:30px;
 		font-size:1.2rem;
 	}
-	&::after {
-		content:"";
-		background-color: $red;
-		border-radius: 50%;
-		height:10px;
+	.dots {
 		width:10px;
-		position: absolute;
-		left:50%;
-		bottom:-25px;
-		transform:translate(-50%,-50%);
+		.dot1 {
+			&::after {
+				animation: none;
+			}
+		}
+	}
+	&:hover .dot1::after {
+		animation:1s pulse infinite;
 	}
 }
 
@@ -129,6 +130,12 @@ ul.workFilter li a:hover, a:focus {
 		padding:13px 15px;
 		border-radius: 50%;
 		border:1px solid black;
+		cursor:pointer;
+		transition:0.3s all ease;
+		&:hover {
+			color:black;
+			background-color: rgba(255,255,255,0.5);
+		}
 	}
 }
 
@@ -155,39 +162,7 @@ ul.workFilter li a:hover, a:focus {
 		text-transform: capitalize;
 		font-size:12px;
 	}
-	.dots {
-		position: absolute;
-		display: flex;
-		justify-content:space-between;
-		left:50%;
-		width: 60px;
-		bottom: -4px;
-		transform:translateX(-50%);
-		.dot {
-			height: 10px;
-			width:10px;
-			background-color: white;
-			border-radius: 50%;
-		}
-		.dot1 {
-			background-color: rgba(210,10,30,1);;
-			&::after {
-				content:"";
-				background: $red;
-				width: 10px;
-				height:10px;
-				position: absolute;
-				top:0;
-				left: 0;
-				right: 0;
-				bottom:0;
-				z-index: 10;
-				border-radius: 50%;
-				animation: pulse 3s ease-out;
-				animation-iteration-count: infinite;
-			}
-		}
-	}
+	
 }
 
 .skills {
@@ -314,7 +289,10 @@ input[type="email"], input[type="text"] {
 	border:none;
 	border-bottom:1px solid rgba(89,93,102,0.1);
 	padding:10px;
-	&:focus {
+	border:3px solid white;
+	border-bottom:3px solid lightgrey;
+	transition:0.3s all ease;
+	&:focus, &:hover {
 		border:3px solid $red;
 		outline: none;
 	}
@@ -328,7 +306,11 @@ textarea {
 	padding:10px;
 	font-size:1.3rem;
 	margin-top:10px;
-	&:focus {
+	resize: none;
+	border:3px solid white;
+	border-bottom:3px solid lightgrey;
+	transition:0.3s all ease;
+	&:focus, &:hover {
 		border:3px solid $red;
 		outline:none;
 	}
@@ -343,6 +325,11 @@ input[type="submit"] {
 	font-weight:bold;
 	display: block;
 	margin-top:8%;
+	transition:0.3s all ease;
+	&:hover, &:focus {
+		border:3px solid black;
+		color:$red;
+	}
 }
 
 // break aside section begins
@@ -365,8 +352,14 @@ aside {
 		background-color: $red;
 		border:none;
 		padding:10px 30px;
+		transition:0.3s all ease;
+		&:hover, &:focus {
+			background-color: white;
+			a {
+				color:$red;
+			}
+		}
 	}
-
 }
 
 // footer styles begin
@@ -396,13 +389,17 @@ footer {
 		font-size:1.3rem;
 		text-align: left;
 		padding-bottom:25px;
-
 	}
 	h4 {
 		color: white;
 		font-size:1.3rem;
 		font-weight:500;
 		text-transform: capitalize;
+		transition:0.3s all ease;
+		&:hover {
+			color:$red;
+			cursor:pointer;
+		}
 	}
 	.socialBar {
 		display: flex;
@@ -413,19 +410,17 @@ footer {
 	}
 	i {
 		color: white;
+		cursor:pointer;
+		transition:0.3s all ease;
+		&:hover,  &:focus {
+			transform:scale(1.5);
+			color: $red;
+		}
 	}
 }
 
 .footerItem {
 	flex:0 1 20%;
-}
-
-.footerItem3 {
-	h4 {
-		&:hover {
-			color:$red;
-		}
-	}
 }
 
 .footerItem4 {
