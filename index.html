@@ -69,7 +69,7 @@
 				<i class="fa fa-search" title="search"></i>
 			</div> <!-- /search -->
 		</nav>
-		<div data-flickity class="carousel headerContent">
+		<div class="carousel headerContent">
 			<div class="carousel-cell headerCell1">
 				<div class="sectionTitle">
 					<h1>Lorem Ipsum Dolor <br> Sit Amet, Consxte-<br>Tut <strong> Adipidcing elit </strong></h1>
@@ -152,7 +152,7 @@
 			<li><a href="#">design</a></li>
 			<li><a href="#">photo</a></li>
 		</ul> <!-- /workFilter -->
-		<div class="wrapperLg" data-flickity>
+		<div class="wrapperLg carousel">
 			<div class="gallery flexParent">
 				<div class="galleryItem">
 					<figure>
@@ -413,7 +413,7 @@
 	<footer>
 		<div class="wrapper">
 			<div class="footerItem footerItem1">
-				<img src="assets/logo.png" alt="the spectre logo" class="logo">
+				<a href="http://leandrasilver.com/spectreSite"><img src="assets/logo.png" alt="the spectre logo" class="logo"></a>
 				<div class="socialBar">
 					<i class="fa fa-behance"></i>
 					<i class="fa fa-futbol-o "></i>
@@ -487,14 +487,15 @@
 			$('#menuIcon').on('click', function(){
 				$('.mainNav').toggleClass('show-menu');
 				$(this).toggleClass('fa-times fa-bars');
-			})
+			});
 
-			// when clicking list item , show menu, and switch between x and hamburger menu
+			// when clicking list item , show menu, and switch between x and hamburger menu.
 			$('.mainNav li').on('click', function(){
-				$('.mainNav').removeClass('show-menu');
-				$('#menuIcon').toggleClass('fa-times fa-bars');
-			})
-		    
+			    if ($('.mainNav li').hasClass('show-menu')){
+			        $('.mainNav') .removeClass('show-menu');
+			    	$('#menuIcon').find('i').toggleClass('fa-bars fa-times');
+			    }
+			});
 		});
 	</script>
 </body>

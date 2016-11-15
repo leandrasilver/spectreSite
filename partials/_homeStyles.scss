@@ -63,6 +63,7 @@
 	}
 	.gallery {
 		flex-wrap:wrap;
+		background-color:black;
 	}
 	.skillItem {
 		> div {
@@ -229,6 +230,7 @@ section.team {
 		&:hover {
 			border:1px solid $darkgrey;
 			color: white;
+			cursor:pointer;
 		}
 	}
 	i.fa-facebook {
